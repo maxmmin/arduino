@@ -4,10 +4,11 @@ class Lighter {
     
     private:
         const int RED_PIN;
+        const int YELLOW_PIN;
         const int GREEN_PIN;
 
     public:
-      Lighter(int redPin, int greenPin,int id) : RED_PIN(redPin), GREEN_PIN(greenPin), ID(id) {
+      Lighter(int redPin, int yellowPin, int greenPin,int id) : RED_PIN(redPin), YELLOW_PIN(yellowPin), GREEN_PIN(greenPin), ID(id) {
       }
 
       bool isGreen () {
@@ -26,14 +27,20 @@ class Lighter {
 
       void init () {
         pinMode(this->GREEN_PIN, OUTPUT);
+        digitalWrite(GREEN_PIN, LOW);
+
+        pinMode(this->YELLOW_PIN, OUTPUT);
+        digitalWrite(YELLOW_PIN, LOW);
+
         pinMode(this->RED_PIN, OUTPUT);
+        digitalWrite(RED_PIN, HIGH);
     }
 };
 
 // red pin, grean pin, id
-Lighter firstLighter(2,4, 0);
-Lighter secondLighter(5,7, 1);
-Lighter thirdLighter(8,10, 2);
+Lighter firstLighter(2,3,4, 0);
+Lighter secondLighter(5,6,7, 1);
+Lighter thirdLighter(8,9,10, 2);
 
 
 // CREATING LIGHTERS ARRAY
@@ -72,6 +79,7 @@ void setup() {
   for (int iterator = 0; iterator<length; iterator++) {
         lighters[iterator].init();
   }
+  
 }
 
 void loop() {
