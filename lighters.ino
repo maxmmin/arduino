@@ -53,7 +53,7 @@ void iteration (Lighter* lighters, int delay, int lightersAmount) {
     int random;
 
     do {
-        random = getRandom(lightersAmount-1);
+        random = getRandom(lightersAmount);
     } while (lighters[random].isGreen());
 
     for (int iterator = 0; iterator<lightersAmount; iterator++) {
