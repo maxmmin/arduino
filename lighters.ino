@@ -26,13 +26,13 @@ class Lighter {
       }
 
       void init () {
-        pinMode(this->GREEN_PIN, OUTPUT);
+        pinMode(GREEN_PIN, OUTPUT);
         digitalWrite(GREEN_PIN, LOW);
 
-        pinMode(this->YELLOW_PIN, OUTPUT);
+        pinMode(YELLOW_PIN, OUTPUT);
         digitalWrite(YELLOW_PIN, LOW);
 
-        pinMode(this->RED_PIN, OUTPUT);
+        pinMode(RED_PIN, OUTPUT);
         digitalWrite(RED_PIN, LOW);
     }
 };
