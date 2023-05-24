@@ -51,9 +51,9 @@ class Lighter {
   // CREATING LIGHTERS ARRAY
   Lighter lighters[] = {firstLighter, secondLighter, thirdLighter};
 
-  const int delayInMs = 5000;
+  const int DELAY_IN_MS = 5000;
    
-  const int length = sizeof(lighters)/sizeof(lighters[0]);
+  const int LENGTH = sizeof(lighters)/sizeof(lighters[0]);
 /*
 * CONFIG END
 */
@@ -89,12 +89,12 @@ void iteration (Lighter* lighters, int delay, int lightersAmount) {
 
 void setup() {
   randomSeed(analogRead(A0));
-  for (int iterator = 0; iterator<length; iterator++) {
+  for (int iterator = 0; iterator<LENGTH; iterator++) {
         lighters[iterator].init();
   }
   
 }
 
 void loop() {
-   iteration(lighters, delayInMs, length);
+   iteration(lighters, DELAY_IN_MS, LENGTH);
 }
