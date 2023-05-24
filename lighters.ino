@@ -58,6 +58,9 @@ class Lighter {
 * CONFIG END
 */
 
+/*
+*   returns number beetween 0 and max(exclusive)
+*/
 int getRandom (int max) {
     return random(max);
 }
