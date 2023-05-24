@@ -33,11 +33,12 @@ class Lighter {
         digitalWrite(YELLOW_PIN, LOW);
 
         pinMode(this->RED_PIN, OUTPUT);
-        digitalWrite(RED_PIN, HIGH);
+        digitalWrite(RED_PIN, LOW);
     }
 };
 
-// red pin, grean pin, id
+// red pin, yellow pin, green pin, id
+// id is not used for lighters logic but can be helpfull for debugging
 Lighter firstLighter(2,3,4, 0);
 Lighter secondLighter(5,6,7, 1);
 Lighter thirdLighter(8,9,10, 2);
@@ -83,5 +84,5 @@ void setup() {
 }
 
 void loop() {
-   iteration(lighters, 5000, length);
+   iteration(lighters, 3000, length);
 }
