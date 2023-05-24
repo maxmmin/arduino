@@ -37,17 +37,26 @@ class Lighter {
     }
 };
 
-// red pin, yellow pin, green pin, id
-// id is not used for lighters logic but can be helpfull for debugging
-Lighter firstLighter(2,3,4, 0);
-Lighter secondLighter(5,6,7, 1);
-Lighter thirdLighter(8,9,10, 2);
+/*
+* CONFIG BEGIN
+*/
+
+  // red pin, yellow pin, green pin, id
+  // id is not used for lighters logic but can be helpfull for debugging
+  Lighter firstLighter(2,3,4, 0);
+  Lighter secondLighter(5,6,7, 1);
+  Lighter thirdLighter(8,9,10, 2);
 
 
-// CREATING LIGHTERS ARRAY
-Lighter lighters[3] = {firstLighter, secondLighter, thirdLighter};
+  // CREATING LIGHTERS ARRAY
+  Lighter lighters[] = {firstLighter, secondLighter, thirdLighter};
 
-int length = sizeof(lighters)/sizeof(lighters[0]);
+  const int delayInMs = 5000;
+   
+  const int length = sizeof(lighters)/sizeof(lighters[0]);
+/*
+* CONFIG END
+*/
 
 int getRandom (int max) {
     return random(max);
@@ -84,5 +93,5 @@ void setup() {
 }
 
 void loop() {
-   iteration(lighters, 3000, length);
+   iteration(lighters, delayInMs, length);
 }
