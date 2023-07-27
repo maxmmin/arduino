@@ -93,8 +93,11 @@ void setup() {
         lighters[iterator].init();
   }
   
+  while (true) {
+    iteration(lighters, DELAY_IN_MS, LENGTH);
+    if (DELAY_IN_MS==-1) break;
+  }
 }
 
 void loop() {
-   iteration(lighters, DELAY_IN_MS, LENGTH);
 }
